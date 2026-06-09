@@ -1,4 +1,30 @@
-<h1>Profile</h1>
-<p>Name: <%= user.name %></p>
-<p>Email: <%= user.email %></p>
-<a href="/">Home</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile - User Management</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh; display: flex; justify-content: center; align-items: center;
+    }
+    .container {
+      background: white; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      padding: 3rem; width: 400px; max-width: 90%; text-align: center;
+    }
+    h1 { color: #333; margin-bottom: 1.5rem; }
+    p { color: #555; margin: 10px 0; font-size: 18px; }
+    a { display: inline-block; margin-top: 20px; color: #667eea; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Profile</h1>
+    <p><strong>Name:</strong> <%= user.name %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <a href="/">← Back to Home</a>
+  </div>
+</body>
+</html>

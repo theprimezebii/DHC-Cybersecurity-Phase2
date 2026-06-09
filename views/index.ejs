@@ -1,4 +1,40 @@
-<h1>User Management System</h1>
-<% if (user) { %><p>Welcome <%= user.name %></p><% } else { %>
-<a href="/signup">Sign Up</a> | <a href="/login">Login</a>
-<% } %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Management System</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .container {
+      background: white; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      padding: 3rem; width: 400px; max-width: 90%; text-align: center;
+    }
+    h1 { color: #333; margin-bottom: 1.5rem; }
+    p { color: #666; margin-bottom: 2rem; }
+    .btn {
+      display: inline-block; padding: 12px 30px; margin: 0 10px;
+      background: #667eea; color: white; text-decoration: none; border-radius: 30px;
+      font-weight: bold; transition: background 0.3s;
+    }
+    .btn:hover { background: #5a67d8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>User Management System</h1>
+    <% if (typeof user !== 'undefined' && user) { %>
+      <p>Welcome back, <strong><%= user.name %></strong>!</p>
+      <a class="btn" href="/profile">My Profile</a>
+    <% } else { %>
+      <p>Manage your account securely.</p>
+      <a class="btn" href="/signup">Sign Up</a>
+      <a class="btn" href="/login">Login</a>
+    <% } %>
+  </div>
+</body>
+</html>
